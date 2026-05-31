@@ -30,6 +30,9 @@ return [
         'ttl_seconds' => 60 * 60 * 8,
     ],
     'cors' => [
-        'allowed_origins' => [getenv('FRONTEND_ORIGIN') ?: 'http://localhost:5173'],
+        'allowed_origins' => array_values(array_filter(array_map(
+            'trim',
+            explode(',', getenv('FRONTEND_ORIGIN') ?: 'http://localhost:5173')
+        ))),
     ],
 ];
