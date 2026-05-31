@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from './Sidebar.jsx';
+import { ThemeToggle } from './ThemeToggle.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useToast } from './Toast.jsx';
 
@@ -41,6 +42,7 @@ export function DashboardLayout({ title, links, children }) {
         <header className="dashboard-header">
           <h1>{title}</h1>
           <div className="dashboard-header-meta">
+            <ThemeToggle />
             {user && (
               <div className="dashboard-user">
                 <div className="dashboard-user-avatar">{initials}</div>

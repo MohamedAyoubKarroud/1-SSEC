@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Icon } from './icons.jsx';
 
 export function Sidebar({ brand, links, collapsed, onToggleCollapse, onLogout }) {
@@ -31,6 +31,14 @@ export function Sidebar({ brand, links, collapsed, onToggleCollapse, onLogout })
       </nav>
 
       <div className="sidebar-footer">
+        <Link
+          to="/landing"
+          className="sidebar-link"
+          title={collapsed ? "Page d'accueil" : undefined}
+        >
+          <span className="sidebar-link-icon"><Icon.Home /></span>
+          <span className="sidebar-link-label">Page d'accueil</span>
+        </Link>
         <button
           type="button"
           className="sidebar-collapse-btn"

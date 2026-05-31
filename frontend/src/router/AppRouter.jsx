@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { ProtectedRoute } from './ProtectedRoute.jsx';
+import Landing from '../pages/Landing.jsx';
 import Login from '../pages/Login.jsx';
 import DashboardDirection from '../pages/DashboardDirection.jsx';
 import DashboardEmploye from '../pages/DashboardEmploye.jsx';
@@ -13,16 +14,17 @@ const HOME_BY_ROLE = {
   admin_it: '/admin',
 };
 
-function HomeRedirect() {
+function Home() {
   const { role } = useAuth();
-  if (!role) return <Navigate to="/login" replace />;
-  return <Navigate to={HOME_BY_ROLE[role] ?? '/login'} replace />;
+  if (role) return <Navigate to={HOME_BY_ROLE[role] ?? '/login'} replace />;
+  return <Landing />;
 }
 
 export function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomeRedirect />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/landing" element={<Landing />} />
       <Route path="/login" element={<Login />} />
 
       <Route element={<ProtectedRoute roles={['direction']} />}>
