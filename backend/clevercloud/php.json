@@ -7,5 +7,16 @@
     "apache": {
       "modules": ["headers", "rewrite"]
     }
-  }
+  },
+  "headers": [
+    {
+      "path": "/api/*",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://1-ssec.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    }
+  ]
 }
