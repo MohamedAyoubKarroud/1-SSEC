@@ -1,18 +1,8 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": "https://app-1ec7e603-b566-443b-9e76-314538965db4.cleverapps.io/api/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,DELETE,OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type,Authorization" }
-      ]
+      "src": "/api/(.*)",
+      "dest": "https://app-1ec7e603-b566-443b-9e76-314538965db4.cleverapps.io/api/$1"
     }
   ]
 }
