@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://app-1ec7e603-b566-443b-9e76-314538965db4.cleverapps.io/api/:path*"
+    }
+  ]
+}
