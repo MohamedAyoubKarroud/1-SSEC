@@ -1,8 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "https://app-1ec7e603-b566-443b-9e76-314538965db4.cleverapps.io/api/$1"
+      "source": "/api/:path*",
+      "destination": "/api/proxy"
     }
   ]
 }
