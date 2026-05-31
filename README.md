@@ -1,5 +1,5 @@
 # SSEC — Système de suivi d'entreprise commerciale
-Système pour gérer l'intrégralité des points importants dans une entreprise commerciale tels que l'inventaire, les tâches affectées aux divers employés ainsi que des graphiques pour visualiser clairement les performances globales
+Système pour gérer l'intrégralité des fonctionnalités principales dans une entreprise commerciale tels que l'inventaire, les tâches affectées aux divers employés ainsi que des graphiques pour visualiser clairement les performances globales
 
 ## Membres de l'équipe
 Mohamed Ayoub - Scrum Master : Développement Backend + Bases de données
@@ -10,10 +10,14 @@ Faris - Développeur : Développement Frontend
 
 Mohamed Ayman - Développeur : Implémentation des APIs
 
-## Layout
+## Arborescence
 
 ```
-SSEC
+1-SSEC
+├─ docs
+|  ├─ fiche_projet - SSEC.pdf
+|  ├─ 1_SSEC_S2.pdf
+|  └─ Livrable_3_1.pdf
 ├─ backend
 │  ├─ api
 │  │  ├─ auth
@@ -27,12 +31,17 @@ SSEC
 │  │  ├─ auth_middleware.php
 │  │  ├─ http.php
 │  │  └─ jwt.php
-│  └─ sql
-│     └─ schema.sql
+│  ├─ sql
+│  |  ├─ schema.sql
+|  |  └─ seed.php
+|  ├─ .env.example
+|  └─ Dockerfile
 ├─ frontend
 │  ├─ index.html
 │  ├─ package-lock.json
 │  ├─ package.json
+│  ├─ .env.example
+│  ├─ vite.config.js
 │  ├─ src
 │  │  ├─ api
 │  │  │  └─ client.js
@@ -45,6 +54,7 @@ SSEC
 │  │  │  ├─ Sidebar.jsx
 │  │  │  ├─ Skeleton.jsx
 │  │  │  ├─ StatCard.jsx
+│  │  │  ├─ ThemeToggle.jsx
 │  │  │  ├─ StatusBadge.jsx
 │  │  │  └─ Toast.jsx
 │  │  ├─ context
@@ -61,14 +71,12 @@ SSEC
 │  │  ├─ router
 │  │  │  ├─ AppRouter.jsx
 │  │  │  └─ ProtectedRoute.jsx
-│  │  └─ styles
-│  │     └─ global.css
+│  │  ├─ styles
+│  │  |  └─ global.css
+│  │  └─ hooks
+│  │     └─ useTheme.js
 │  └─ vite.config.js
-└─ README.md
-├─ docs
-    ├─ fiche_projet - SSEC.pdf
-    ├─ 1_SSEC_S2.pdf
-    └─ Livrable_3_1.pdf
+├─ README.md
 └─ .gitignore
 ```
 ## Technologies utilisées
@@ -125,16 +133,19 @@ npm run dev      # http://localhost:5173, /api proxied to :8000
 
 `ProtectedRoute` redirige les utilisateurs non authentifiés vers `/login` et les rôles non autorisés vers `/`.
 
-## URL de déploiement
-
-
 
 ## Identifiants de test
 
+Employé : employe@ssec.local
 
+Direction : direction@ssec.local
+
+Administrateur : admin@ssec.local
+
+Mot de passe : password
 
 ## Livrables antérieurs 
 
-
+1-SSEC/docs 
 
 
