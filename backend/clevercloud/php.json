@@ -1,0 +1,11 @@
+{
+  "deploy": {
+    "webroot": "/"
+  },
+  "configuration": {
+    "phpVersion": "8.2",
+    "apache": {
+      "modules": ["headers", "rewrite"]
+    }
+  }
+}
